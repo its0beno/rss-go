@@ -18,7 +18,8 @@ type apiConfig struct{
 	DB *database.Queries
 }
 func main () {
-
+	feed,err:= urlTOFeedFollows("https://www.wagslane.dev/index.xml")
+	fmt.Println(feed,err)
 	godotenv.Load()
 	portString:=os.Getenv("PORT")
 	if portString=="" {
